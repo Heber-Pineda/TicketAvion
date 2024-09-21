@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "268811968186",
+    "project_id": "ticketavion-6918f",
+    "storage_bucket": "ticketavion-6918f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268811968186:android:aa32dc69006e113374ec83",
+        "android_client_info": {
+          "package_name": "com.example.ticketavion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAun3Bf3LhU4oj7tAVuyQV2ZZ9r-9PFq3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
