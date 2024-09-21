@@ -1,9 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class AddTicketScreen extends StatelessWidget {
   final TextEditingController vueloController = TextEditingController();
   final TextEditingController aerolineaController = TextEditingController();
-  // Agregar más controladores para otros campos
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +21,9 @@ class AddTicketScreen extends StatelessWidget {
               controller: aerolineaController,
               decoration: InputDecoration(labelText: 'Aerolínea'),
             ),
-            // Más campos como origen, destino, asiento, clase
             ElevatedButton(
               onPressed: () {
-                // Llamar a Provider para guardar en Firebase
+                _addTicket(context);
               },
               child: Text('Agregar Ticket'),
             ),
@@ -32,5 +31,22 @@ class AddTicketScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _addTicket(BuildContext context) async {
+    try {
+      await FirebaseFirestore.instance.collection('tickets').add({
+        'vuelo': vueloController.text,
+        'aerolinea': aerolineaController.text,
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Ticket agregado con éxito')),
+      );
+      Navigator.pop(context); // Regresar a la pantalla de lista de tickets
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error al agregar el ticket: $e')),
+      );
+    }
   }
 }
