@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'presentation/ticket/add_ticket_screen.dart';
+import 'presentation/ticket/delete_ticket_screen.dart';
 import 'presentation/ticket/edit_ticket_screen.dart';
 import 'presentation/ticket/ticket_list_screen.dart';
 
@@ -22,6 +23,11 @@ final _router = GoRouter(
         final id = state.params['id'];
         return EditTicketScreen(ticketId: id!); // Asegúrate de manejar el ID como no nulo
       },
+      
+    ),
+    GoRoute(
+      path: '/delete',
+      builder: (context, state) => DeleteTicketScreen(),
     ),
   ],
 );
