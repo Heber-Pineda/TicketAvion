@@ -22,7 +22,4 @@ class DefaultFirebaseOptions {
     measurementId: "G-G9Y1C5P08B",
   );
 
-  // Aquí puedes agregar configuraciones para otras plataformas, como Android o iOS si las necesitas.
-  // static const FirebaseOptions android = FirebaseOptions(...);
-  // static const FirebaseOptions ios = FirebaseOptions(...);
 }
