@@ -9,12 +9,12 @@ import 'presentation/ticket/ticket_list_screen.dart';
 final _router = GoRouter(
   routes: [
     GoRoute(
-      path: '/',
-      builder: (context, state) => TicketListScreen(),
-    ),
-    GoRoute(
       path: '/add',
       builder: (context, state) => AddTicketScreen(),
+    ),
+    GoRoute(
+      path: '/',
+      builder: (context, state) => TicketListScreen(),
     ),
     GoRoute(
       path: '/edit/:id',
